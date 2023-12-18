@@ -7,14 +7,14 @@ import RabbitImage from "../components/ImagesComponent.jsx/rabbitImage";
 import ElephantSound from "../components/SoundsComponent/elephantSound";
 import GiraffeSound from "../components/SoundsComponent/giraffeSound";
 
-export const quiz = {
-    totalQuestions:2,
+/* export const quiz = {
+     totalQuestions:2,
     questions:[
         {
             id:1,
             question:(<ElephantSound />),
-            answers:[(<ElephantImage />),(<EagleImage />),(<LionsImage />),(<RabbitImage />)],
-            correctAnswer:(<ElephantImage />),
+            answers:[<ElephantImage />,<EagleImage />,<LionsImage />,<RabbitImage />],
+            correctAnswer:"Elephant",
             
         },
         {
@@ -24,4 +24,31 @@ export const quiz = {
             correctAnswer:(<GirrafeImage />),
         },
     ],
+};*/
+export const quiz = {
+  totalQuestions: 2,
+  questions: [
+    {
+      id: 1,
+      question: (<ElephantSound />),
+      answers: [
+        { id: 1, value: (<ElephantImage />) },
+        { id: 2, value: (<EagleImage />) },
+        { id: 3, value: (<LionsImage />) },
+        { id: 4, value: (<RabbitImage />) },
+      ],
+      correctAnswer: { id: 1, value: (<ElephantImage />) },
+    },
+    {
+      id: 2,
+      question: (<GiraffeSound />),
+      answers: [
+        { id: 1, value: (<GirrafeImage />) },
+        { id: 2, value: (<BearImage />) },
+        { id: 3, value: (<RabbitImage />) },
+        { id: 4, value: (<EagleImage />) },
+      ],
+      correctAnswer: { id: 1, value: (<GirrafeImage />) },
+    },
+  ],
 };

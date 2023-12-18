@@ -10,7 +10,7 @@ const SoundButton = ({ audioSrc }) => {
   };
 
   return (
-    <div className="flex items-center justify-center h-48">
+    <div className="flex items-center justify-center h-24">
       <button 
        className="bg-blue-500 hover:bg-green-700 text-white font-bold py-4 px-10 rounded"
       onClick={playAudio}>Play Sound</button>

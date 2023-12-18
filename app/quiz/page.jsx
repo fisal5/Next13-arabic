@@ -26,27 +26,135 @@ import { useState } from 'react';
   });
 
   const {questions} = quiz;
-  const {question, answers, corrctAnswer }= questions[activeQuestion];
+  const {question, answers, correctAnswer }= questions[activeQuestion];
+
+  // Select and check answer
+  const onAnswerSelected = (answer ,id) => {
+    setChecked(true);
+    setSelectedAnswerIndex(id);
+    if ((answer.id) === (correctAnswer.id)) {
+      setSelectedAnswer(true);
+      console.log('true');
+    } else{
+      setSelectedAnswer(false);
+      console.log('false');
+      console.log(questions[0].id)
+      console.log ( '✅')
+    }
+  };
+  // Calculate score and increment to next question 
+
+  const nextQuestion = () => {
+    setSelectedAnswer(null);
+    setResult((prev) => 
+    selectedAnswer 
+      ? {
+         ...prev,
+        correctAnswers: prev.correctAnswers +1,
+        }
+      : {
+         ...prev,
+         wrongAnswers: prev.wrongAnswers +1,
+
+        }
+    );
+    if (activeQuestion !== questions.length -1) {
+      setActiveQuestion((prev) => prev +1);
+    } else{
+      setActiveQuestion(0);
+      setShowResult(true);
+    }
+    setChecked(false);
+  };
+
+      
+  
+
+  //Function to create correct and wrong sounds
+  
+  const playCorrectSound = () => {
+    const soundCorrect = new Audio('/correct_sound_effect.mp3');
+    soundCorrect.play();
+  
+  };
+
+  const playWrongSound = () => {
+    const soundWrong = new Audio('/wrong_sound_effect.mp3');
+    soundWrong.play();
+    
+  };
+
+  //correct and wrong symbols
+  const renderAnswerSymbol = () => {
+    if (checked) {
+      if (selectedAnswer) {
+        playCorrectSound();
+        return (
+          <span className="text-4xl block mx-auto">
+            ✅
+          </span>
+        );
+      } else {
+        playWrongSound();
+        return (
+          <span className="text-4xl block mx-auto">
+            ❌
+          </span>
+        );
+      }
+    }
+    return null;
+  };
+
+
+
 
   return (
     
       
-      <div className=" p-4 border border-gray-300 rounded shadow-md ">{!showResult ? (
-       <div>
+      <div className=" p-0 border-0 rounded ">{!showResult ? (
+       <div >
         <h3>{questions[activeQuestion].question}</h3>
-        <ul className="grid grid-cols-2 grid-rows-2 place-items-center box-border h-full gap-9">
-         {answers.map((answer, idx)=>(
+        <ul className="grid grid-cols-2 grid-rows-50 grid-rows-50 place-items-center box-border gap-3">
+         {answers.map((answer, id)=>(
           <li
-           key={idx}
+           key={id}
+           onClick={() => onAnswerSelected(answer, id)}
            >
-           <span>{answer}</span>
+            <span>{answer.value}</span>
           </li> 
           ))};
         </ul>  
+        {renderAnswerSymbol()}
+        {checked ? (<div className="flex items-center justify-center h-24"> 
+          <button onClick={nextQuestion} className="bg-blue-500 hover:bg-green-700 text-white font-bold py-4 px-10 rounded"> 
+           {activeQuestion === questions.length -1 ? 'Finish': 'Next'}
+          </button>
+         </div>
+        
+        ):(
+         <div className="flex items-center justify-center h-24"> 
+          <button className="bg-grey-500 hover:bg-green-700 text-white font-bold py-4 px-10 rounded"
+          disabled
+          > 
+           {activeQuestion === questions.length -1 ? 'Finish': 'Next'}
+          </button>
+         </div> )} 
+
         
        </div>
         ) : (
-        <div>{Result}</div>)}
+              <div className='flex center justify-center items-center h-screen'>
+                <p> 
+                  <span className="text-9xl inline-block ">
+                   ✅
+                  </span>    
+                  <span className='text-9xl ml-24'>
+                   {result.correctAnswers} 
+                  </span>
+                 </p> 
+              </div>
+            )}
       </div> 
 
 
@@ -57,25 +165,7 @@ import { useState } from 'react';
 
 }; 
 
- /* const page = () => {
-  return (
-     
-    <div className="p-4 border border-gray-300 rounded shadow-md h-screen">
-  
-    <ElephantSound />
-  
-    
-    <li className="grid grid-cols-2 grid-rows-2 grid-rows-auto box-border h-150 gap-4 ">
-      <EagleImage />
-      <ElephantImage/>
-      <LionsImage />
-      <GirrafeImage/>
-    </li>
-  </div>
-
-  );
-}; 
-*/
+ 
 
   
   

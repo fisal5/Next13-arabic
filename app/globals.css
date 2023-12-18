@@ -11,16 +11,14 @@
 
 
 html { 
-  
-  
+  height: 100%;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  
-  
-  
+  height: 100%;
 }
+
 .li-hover:hover{
   background-color: #333333;
   columns: #fff;
