@@ -14,10 +14,11 @@ import { quiz } from './data';
 import { useState } from 'react';
 
   const page =() => {
+  const [checkedSoundButton, setCheckedSoundButton]=useState(false);
   const [activeQuestion,setActiveQuestion]=useState(0);
   const [selectedAnswer,setSelectedAnswer]=useState('');
   const [checked, setChecked]= useState(false);
-  const [selectedAnswerIndex,setSelectedAnswerIndex]=useState(null);
+  const [selectedAnswerIndex,setSelectedAnswerIndex]=useState(false);
   const [showResult, setShowResult]=useState(false);
   const [result, setResult]= useState({
     score:0,
@@ -31,21 +32,33 @@ import { useState } from 'react';
   // Select and check answer
   const onAnswerSelected = (answer ,id) => {
     setChecked(true);
-    setSelectedAnswerIndex(id);
+    setSelectedAnswerIndex(true);
     if ((answer.id) === (correctAnswer.id)) {
       setSelectedAnswer(true);
-      console.log('true');
+      /* console.log('selectedAnswer:', selectedAnswer);
+      console.log('selectedAnswerIndex:', selectedAnswerIndex);
+      console.log(checked);
+      console.log(id);
+      console.log(answer.id); */
+      
+
     } else{
       setSelectedAnswer(false);
       console.log('false');
-      console.log(questions[0].id)
-      console.log ( '✅')
+      //console.log(questions[acti].id)
+      /* console.log('selectedAnswer:', selectedAnswer);
+      console.log('selectedAnswerIndex:', selectedAnswerIndex);
+      console.log(checked);
+      console.log(id);
+      console.log(answer.id);
+      console.log(correctAnswer.id); */
     }
   };
   // Calculate score and increment to next question 
 
   const nextQuestion = () => {
     setSelectedAnswer(null);
+    setSelectedAnswerIndex(false);
     setResult((prev) => 
     selectedAnswer 
       ? {
@@ -89,13 +102,26 @@ import { useState } from 'react';
     if (checked) {
       if (selectedAnswer) {
         playCorrectSound();
+        /*console.log('selectedAnswer:', selectedAnswer);
+        console.log('selectedAnswerIndex:', selectedAnswerIndex);
+        console.log(checked); */
+        
         return (
           <span className="text-4xl block mx-auto">
             ✅
           </span>
-        );
+          );
+      console.log('selectedAnswer:', selectedAnswer);
+      console.log('selectedAnswerIndex:', selectedAnswerIndex);
+      console.log(checked);
+      console.log(id);
+      console.log(answer.id);
+      console.log(correctAnswer.id);
       } else {
         playWrongSound();
+        /* console.log('selectedAnswer:', selectedAnswer);
+        console.log('selectedAnswerIndex:', selectedAnswerIndex);
+        console.log(checked);*/
         return (
           <span className="text-4xl block mx-auto">
             ❌
@@ -120,10 +146,11 @@ import { useState } from 'react';
           <li
            key={id}
            onClick={() => onAnswerSelected(answer, id)}
+           className= {selectedAnswerIndex === false ? "hover:scale-105": "opacity-50 pointer-events-none"}
            >
             <span>{answer.value}</span>
           </li> 
-          ))};
+          ))}
         </ul>  
         {renderAnswerSymbol()}
         {checked ? (<div className="flex items-center justify-center h-24"> 
@@ -134,7 +161,7 @@ import { useState } from 'react';
         
         ):(
          <div className="flex items-center justify-center h-24"> 
-          <button className="bg-grey-500 hover:bg-green-700 text-white font-bold py-4 px-10 rounded"
+          <button className="bg-grey-500 hover:bg-white-700 text-white font-bold py-4 px-10 rounded"
           disabled
           > 
            {activeQuestion === questions.length -1 ? 'Finish': 'Next'}
