@@ -35,24 +35,11 @@ import { useState } from 'react';
     setSelectedAnswerIndex(true);
     if ((answer.id) === (correctAnswer.id)) {
       setSelectedAnswer(true);
-      /* console.log('selectedAnswer:', selectedAnswer);
-      console.log('selectedAnswerIndex:', selectedAnswerIndex);
-      console.log(checked);
-      console.log(id);
-      console.log(answer.id); */
       
-
-    } else{
+      } else{
       setSelectedAnswer(false);
       console.log('false');
-      //console.log(questions[acti].id)
-      /* console.log('selectedAnswer:', selectedAnswer);
-      console.log('selectedAnswerIndex:', selectedAnswerIndex);
-      console.log(checked);
-      console.log(id);
-      console.log(answer.id);
-      console.log(correctAnswer.id); */
-    }
+      }
   };
   // Calculate score and increment to next question 
 
@@ -102,10 +89,6 @@ import { useState } from 'react';
     if (checked) {
       if (selectedAnswer) {
         playCorrectSound();
-        /*console.log('selectedAnswer:', selectedAnswer);
-        console.log('selectedAnswerIndex:', selectedAnswerIndex);
-        console.log(checked); */
-        
         return (
           <span className="text-4xl block mx-auto">
             ✅
@@ -119,9 +102,6 @@ import { useState } from 'react';
       console.log(correctAnswer.id);
       } else {
         playWrongSound();
-        /* console.log('selectedAnswer:', selectedAnswer);
-        console.log('selectedAnswerIndex:', selectedAnswerIndex);
-        console.log(checked);*/
         return (
           <span className="text-4xl block mx-auto">
             ❌

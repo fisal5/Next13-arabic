@@ -6,27 +6,11 @@ import LionsImage from "../components/ImagesComponent.jsx/lionsImage";
 import RabbitImage from "../components/ImagesComponent.jsx/rabbitImage";
 import ElephantSound from "../components/SoundsComponent/elephantSound";
 import GiraffeSound from "../components/SoundsComponent/giraffeSound";
+import BearSound from "../components/SoundsComponent/bearSound";
+import DogImage from "../components/ImagesComponent.jsx/DogImage";
 
-/* export const quiz = {
-     totalQuestions:2,
-    questions:[
-        {
-            id:1,
-            question:(<ElephantSound />),
-            answers:[<ElephantImage />,<EagleImage />,<LionsImage />,<RabbitImage />],
-            correctAnswer:"Elephant",
-            
-        },
-        {
-            id:2,
-            question:(<GiraffeSound />),
-            answers:[(<GirrafeImage />),(<BearImage />),(<RabbitImage />),(<EagleImage />)],
-            correctAnswer:(<GirrafeImage />),
-        },
-    ],
-};*/
 export const quiz = {
-  totalQuestions: 2,
+  totalQuestions: 3,
   questions: [
     {
       id: 1,
@@ -49,6 +33,17 @@ export const quiz = {
         { id: 4, value: (<EagleImage />) },
       ],
       correctAnswer: { id: 1, value: (<GirrafeImage />) },
+    },
+    {
+      id: 3,
+      question: (<BearSound />),
+      answers: [
+        { id: 1, value: (<ElephantImage />) },
+        { id: 2, value: (<BearImage />) },
+        { id: 3, value: (<LionsImage />) },
+        { id: 4, value: (<DogImage />) },
+      ],
+      correctAnswer: { id: 2, value: (<BearImage />) },
     },
   ],
 };
