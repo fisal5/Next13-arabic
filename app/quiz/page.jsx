@@ -10,6 +10,7 @@ import RabbitImage from '../components/ImagesComponent.jsx/rabbitImage';
 import BearImage from '../components/ImagesComponent.jsx/BearImage';
 import GirrafeImage from '../components/ImagesComponent.jsx/girrafeImage';
 import ElephantSound from '../components/SoundsComponent/elephantSound';
+import DogSound from '../components/SoundsComponent/dogSound';
 import { quiz } from './data';
 import { useState } from 'react';
 

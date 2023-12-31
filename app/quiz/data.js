@@ -8,9 +8,10 @@ import ElephantSound from "../components/SoundsComponent/elephantSound";
 import GiraffeSound from "../components/SoundsComponent/giraffeSound";
 import BearSound from "../components/SoundsComponent/bearSound";
 import DogImage from "../components/ImagesComponent.jsx/DogImage";
+import DogSound from "../components/SoundsComponent/dogSound";
 
 export const quiz = {
-  totalQuestions: 3,
+  totalQuestions: 4,
   questions: [
     {
       id: 1,
@@ -45,5 +46,17 @@ export const quiz = {
       ],
       correctAnswer: { id: 2, value: (<BearImage />) },
     },
+    {
+      id: 4,
+      question: (<DogSound />),
+      answers: [
+        { id: 1, value: (<GirrafeImage />) },
+        { id: 2, value: (<LionsImage />) },
+        { id: 3, value: (<DogImage />) },
+        { id: 4, value: (<EagleImage />) },
+      ],
+      correctAnswer: { id: 3, value: (<DogImage />) },
+    },
+    
   ],
 };
