@@ -5,7 +5,7 @@ import Image from 'next/image'
 const GirrafeImage = () => {
   return (
     <div>
-      <ImageComponent src="/giraffe.jpg" alt="Girrafe" />
+      <ImageComponent src="/giraffe.jpg" alt="Girrafe"  />
     </div>
   )
 }

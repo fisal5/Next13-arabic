@@ -5,7 +5,7 @@ import Image from 'next/image'
 const ElephantImage = () => {
   return (
     
-      <ImageComponent src="/elephant.jpeg" alt="elephant" />
+      <ImageComponent src="/elephant.jpeg" alt="elephant" priority={true} />
     
   )
 };

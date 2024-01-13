@@ -10,10 +10,11 @@ export default function Home() {
         <h1>Quiz Age</h1>
         <Link href='quiz'>
           <div className="crusor-pointer inline-block p-2 px-5 bg-blue-500 text-white rounded-lg text-center">
-            <Image className="max-w-full h-auto"
+            <Image className="w-auto h-auto"
               src= '/animals.jpeg'
               alt="animals image"
-              width={500}
+              priority={true}
+              width={300}
               height={300}
             /> 
           </div>

@@ -1,18 +1,19 @@
 'use client';
 import React from 'react';
-import SoundButton from '../components/soundButton';
-import ImageComponent from '../components/ImageComponent';
+//import SoundButton from '../components/soundButton';
+//import ImageComponent from '../components/ImageComponent';
 import Image from 'next/image';
-import ElephantImage from '../components/ImagesComponent.jsx/elephantImage';
-import EagleImage from '../components/ImagesComponent.jsx/eagleImage';
-import LionsImage from '../components/ImagesComponent.jsx/lionsImage';
-import RabbitImage from '../components/ImagesComponent.jsx/rabbitImage';
-import BearImage from '../components/ImagesComponent.jsx/BearImage';
-import GirrafeImage from '../components/ImagesComponent.jsx/girrafeImage';
-import ElephantSound from '../components/SoundsComponent/elephantSound';
-import DogSound from '../components/SoundsComponent/dogSound';
+//import ElephantImage from '../components/ImagesComponent.jsx/elephantImage';
+//import EagleImage from '../components/ImagesComponent.jsx/eagleImage';
+//import LionsImage from '../components/ImagesComponent.jsx/lionsImage';
+//import RabbitImage from '../components/ImagesComponent.jsx/rabbitImage';
+//import BearImage from '../components/ImagesComponent.jsx/BearImage';
+//import GirrafeImage from '../components/ImagesComponent.jsx/girrafeImage';
+//import ElephantSound from '../components/SoundsComponent/elephantSound';
+//import DogSound from '../components/SoundsComponent/dogSound';
 import { quiz } from './data';
 import { useState } from 'react';
+// import shuffle from '../components/shuffle';
 
   const page =() => {
   const [checkedSoundButton, setCheckedSoundButton]=useState(false);
@@ -29,6 +30,29 @@ import { useState } from 'react';
 
   const {questions} = quiz;
   const {question, answers, correctAnswer }= questions[activeQuestion];
+  /*const shuffledQuestions = shuffle([...questions]);
+  const {question, answers, correctAnswer } = shuffledQuestions[activeQuestion];
+  
+
+  console.log(shuffledQuestions);
+  console.log(shuffledQuestions[0].question)
+  console.log(shuffledQuestions[1].question)
+  console.log(shuffledQuestions[2].question)
+  console.log(shuffledQuestions[3].question)*/
+
+  /* Shuffle function
+  function shuffle(array) {
+    const shuffledArray = array.map((item) => ({ ...item })); // Create new instances
+    for (let i = shuffledArray.length - 1; i > 0; i--) {
+      const swapIndex = Math.floor(Math.random() * (i + 1));
+      const temp = shuffledArray[i];
+      shuffledArray[i] = shuffledArray[swapIndex];
+      shuffledArray[swapIndex] = temp;
+    }
+    return shuffledArray;
+  } */
+
+  
 
   // Select and check answer
   const onAnswerSelected = (answer ,id) => {
@@ -95,12 +119,7 @@ import { useState } from 'react';
             ✅
           </span>
           );
-      console.log('selectedAnswer:', selectedAnswer);
-      console.log('selectedAnswerIndex:', selectedAnswerIndex);
-      console.log(checked);
-      console.log(id);
-      console.log(answer.id);
-      console.log(correctAnswer.id);
+      
       } else {
         playWrongSound();
         return (
@@ -121,6 +140,7 @@ import { useState } from 'react';
       
       <div className=" p-0 border-0 rounded ">{!showResult ? (
        <div >
+        {/* <h3>{questions[activeQuestion].question}</h3> */}
         <h3>{questions[activeQuestion].question}</h3>
         <ul className="grid grid-cols-2 grid-rows-50 grid-rows-50 place-items-center box-border gap-3">
          {answers.map((answer, id)=>(
@@ -152,26 +172,37 @@ import { useState } from 'react';
         
        </div>
         ) : (
-              <div className='flex center justify-center items-center h-screen'>
-                <p> 
-                  <span className="text-9xl inline-block ">
-                   ✅
-                  </span>    
-                  <span className='text-9xl ml-24'>
-                   {result.correctAnswers} 
-                  </span>
-                 </p> 
-              </div>
-            )}
-      </div> 
+          <div className='flex flex-wrap center justify-center items-center h-screen'>
+            <p> 
+              <span className="text-9xl inline-block ">
+               ✅
+              </span>    
+              <span className='text-9xl ml-24'>
+               {result.correctAnswers} 
+              </span>
+             </p> 
+             <div className= 'basis-full h-0'> </div>
+             <div>
+               <button className="bg-blue-500 hover:bg-green-700 text-white font-bold py-4 px-10 rounded"
+                onClick={() => window.location.reload()}>
+                  Restart
+               </button>
+             </div>
+          </div>
+
+        )}
+  </div> 
 
 
-    
-    
-  )
+
+
+)
 
 
 }; 
+
+              
+               
 
  
 
