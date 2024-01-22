@@ -12,7 +12,6 @@ const ImageComponent = ({ src, alt, priority}) => {
     return( 
        <div className="rounded-lg mx-auto overflow-hidden">
          <Image className={"ease-in-out w-64 h-52 scale-100 hover:scale-105"}
-
           src={src} 
           alt={alt}
           priority={priority}

@@ -13,7 +13,19 @@ import Image from 'next/image';
 //import DogSound from '../components/SoundsComponent/dogSound';
 import { quiz } from './data';
 import { useState } from 'react';
-// import shuffle from '../components/shuffle';
+import shuffle from '../components/shuffle';
+import dynamic from "next/dynamic";
+
+/* const shuffle = (array) => {
+  const shuffledArray = array.map((item) => ({ ...item }));
+  for (let i = shuffledArray.length - 1; i > 0; i--) {
+    const swapIndex = Math.floor(Math.random() * (i + 1));
+    const temp = shuffledArray[i];
+    shuffledArray[i] = shuffledArray[swapIndex];
+    shuffledArray[swapIndex] = temp;
+  }
+  return shuffledArray;
+};*/
 
   const page =() => {
   const [checkedSoundButton, setCheckedSoundButton]=useState(false);
@@ -22,19 +34,22 @@ import { useState } from 'react';
   const [checked, setChecked]= useState(false);
   const [selectedAnswerIndex,setSelectedAnswerIndex]=useState(false);
   const [showResult, setShowResult]=useState(false);
+  const [isClient, setIsClient] = useState(false);
   const [result, setResult]= useState({
     score:0,
     correctAnswers:0,
-    wrongAnswers: 0,
+    wrongAnswers: 0
   });
 
-  const {questions} = quiz;
-  const {question, answers, correctAnswer }= questions[activeQuestion];
-  /*const shuffledQuestions = shuffle([...questions]);
+
+
+  // const {questions} = quiz;
+  // const {question, answers, correctAnswer }= questions[activeQuestion];
+  const [shuffledQuestions ,setShuffledQuestions] = useState(shuffle([...quiz.questions]));
   const {question, answers, correctAnswer } = shuffledQuestions[activeQuestion];
   
 
-  console.log(shuffledQuestions);
+ /* console.log(shuffledQuestions);
   console.log(shuffledQuestions[0].question)
   console.log(shuffledQuestions[1].question)
   console.log(shuffledQuestions[2].question)
@@ -83,7 +98,7 @@ import { useState } from 'react';
 
         }
     );
-    if (activeQuestion !== questions.length -1) {
+    if (activeQuestion !== shuffledQuestions.length -1) {
       setActiveQuestion((prev) => prev +1);
     } else{
       setActiveQuestion(0);
@@ -141,22 +156,22 @@ import { useState } from 'react';
       <div className=" p-0 border-0 rounded ">{!showResult ? (
        <div >
         {/* <h3>{questions[activeQuestion].question}</h3> */}
-        <h3>{questions[activeQuestion].question}</h3>
+        <h3>{question}</h3>
         <ul className="grid grid-cols-2 grid-rows-50 grid-rows-50 place-items-center box-border gap-3">
          {answers.map((answer, id)=>(
           <li
-           key={id}
+           key={answer.id}
            onClick={() => onAnswerSelected(answer, id)}
            className= {selectedAnswerIndex === false ? "hover:scale-105": "opacity-50 pointer-events-none"}
            >
-            <span>{answer.value}</span>
+            <div>{answer.value}</div>
           </li> 
           ))}
         </ul>  
         {renderAnswerSymbol()}
         {checked ? (<div className="flex items-center justify-center h-24"> 
           <button onClick={nextQuestion} className="bg-blue-500 hover:bg-green-700 text-white font-bold py-4 px-10 rounded"> 
-           {activeQuestion === questions.length -1 ? 'Finish': 'Next'}
+           {activeQuestion === shuffledQuestions.length -1 ? 'Finish': 'Next'}
           </button>
          </div>
         
@@ -165,7 +180,7 @@ import { useState } from 'react';
           <button className="bg-grey-500 hover:bg-white-700 text-white font-bold py-4 px-10 rounded"
           disabled
           > 
-           {activeQuestion === questions.length -1 ? 'Finish': 'Next'}
+           {activeQuestion === shuffledQuestions.length -1 ? 'Finish': 'Next'}
           </button>
          </div> )} 
 
@@ -181,14 +196,14 @@ import { useState } from 'react';
                {result.correctAnswers} 
               </span>
              </p> 
-             <div className= 'basis-full h-0'> </div>
+              <div className= 'basis-full h-0'> </div>
              <div>
                <button className="bg-blue-500 hover:bg-green-700 text-white font-bold py-4 px-10 rounded"
                 onClick={() => window.location.reload()}>
                   Restart
                </button>
              </div>
-          </div>
+          </div> 
 
         )}
   </div> 
@@ -209,7 +224,7 @@ import { useState } from 'react';
   
   
 
-   export default page;
+   export default dynamic (() => Promise.resolve(page), {ssr: false})
 
 
 
