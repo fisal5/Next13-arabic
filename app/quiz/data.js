@@ -17,6 +17,7 @@ import CatImage from "../components/ImagesComponent.jsx/CatImage";
 import TigerSound from "../components/SoundsComponent/tigerSound";
 import CatSound from "../components/SoundsComponent/catSound";
 import MonkeySound from "../components/SoundsComponent/monkeySound";
+import EagleSound from "../components/SoundsComponent/eagleSound";
 
 export const quiz = {
   totalQuestions: 5,
@@ -109,6 +110,18 @@ export const quiz = {
       ],
       correctAnswer: { id: 3, value: (<MonkeyImage />) },
     },
+    {
+      id: 9,
+      question: (<EagleSound />),
+      answers: [
+        { id: 1, value: (<ElephantImage />) },
+        { id: 2, value: (<EagleImage />) },
+        { id: 3, value: (<MonkeyImage />) },
+        { id: 4, value: (<TigerImage />) },
+      ],
+      correctAnswer: { id: 2, value: (<EagleImage />) },
+    },
+    
     
     
   ],

@@ -4,7 +4,7 @@ import SoundButton from '../soundButton';
 const ElephantSound = () => {
   return (
     <div>
-      <SoundButton audioSrc="/elephantsound.mp3" />
+      <SoundButton audioSrc="/Elefant2.mp3" />
     </div>
   )
 };

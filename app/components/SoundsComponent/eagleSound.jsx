@@ -1,7 +1,7 @@
 import React from 'react'
 import SoundButton from '../soundButton';
 
-const eagleSound = () => {
+const EagleSound = () => {
   return (
     <div>
       <SoundButton audioSrc="/Eagle.mp3" />
@@ -9,4 +9,4 @@ const eagleSound = () => {
   )
 };
 
-export default eagleSound;
+export default EagleSound;

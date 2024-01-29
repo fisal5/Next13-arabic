@@ -1,31 +1,12 @@
 'use client';
 import React from 'react';
-//import SoundButton from '../components/soundButton';
-//import ImageComponent from '../components/ImageComponent';
 import Image from 'next/image';
-//import ElephantImage from '../components/ImagesComponent.jsx/elephantImage';
-//import EagleImage from '../components/ImagesComponent.jsx/eagleImage';
-//import LionsImage from '../components/ImagesComponent.jsx/lionsImage';
-//import RabbitImage from '../components/ImagesComponent.jsx/rabbitImage';
-//import BearImage from '../components/ImagesComponent.jsx/BearImage';
-//import GirrafeImage from '../components/ImagesComponent.jsx/girrafeImage';
-//import ElephantSound from '../components/SoundsComponent/elephantSound';
-//import DogSound from '../components/SoundsComponent/dogSound';
 import { quiz } from './data';
-import { useState } from 'react';
+import { useEffect ,useState } from 'react';
 import shuffle from '../components/shuffle';
 import dynamic from "next/dynamic";
 
-/* const shuffle = (array) => {
-  const shuffledArray = array.map((item) => ({ ...item }));
-  for (let i = shuffledArray.length - 1; i > 0; i--) {
-    const swapIndex = Math.floor(Math.random() * (i + 1));
-    const temp = shuffledArray[i];
-    shuffledArray[i] = shuffledArray[swapIndex];
-    shuffledArray[swapIndex] = temp;
-  }
-  return shuffledArray;
-};*/
+
 
   const page =() => {
   const [checkedSoundButton, setCheckedSoundButton]=useState(false);
@@ -41,35 +22,25 @@ import dynamic from "next/dynamic";
     wrongAnswers: 0
   });
 
-
-
-  // const {questions} = quiz;
-  // const {question, answers, correctAnswer }= questions[activeQuestion];
-  const [shuffledQuestions ,setShuffledQuestions] = useState(shuffle([...quiz.questions]));
+/* usestate will run the shuffle function when the state is initialized.
+   this will prevent shuffling the questions every time rendering happens */
+  const [shuffledQuestions ,setShuffledQuestions] = useState(() => shuffle([...quiz.questions]));
+  // For destruction the properties in each element of the shuffledquestions.  
   const {question, answers, correctAnswer } = shuffledQuestions[activeQuestion];
+  /* Declares a state variable shuffledAnswers. 
+     The state will initially be an empty array.
+     setShuffledAnswers is the function that will be used to update the shuffledAnswers state. */
+  const [shuffledAnswers, setShuffledAnswers] = useState([]);
+  /* useEffect shuffles the answers when the activeQuestion state is updated. 
+     If we dont use the Useffect. the answers will shuffle every
+     time we renders. or will shuffle only just with first render */
+     
+   useEffect(()=> { const shuffled = shuffle([...answers]);
+                    setShuffledAnswers(shuffled); },[activeQuestion]);
   
 
- /* console.log(shuffledQuestions);
-  console.log(shuffledQuestions[0].question)
-  console.log(shuffledQuestions[1].question)
-  console.log(shuffledQuestions[2].question)
-  console.log(shuffledQuestions[3].question)*/
-
-  /* Shuffle function
-  function shuffle(array) {
-    const shuffledArray = array.map((item) => ({ ...item })); // Create new instances
-    for (let i = shuffledArray.length - 1; i > 0; i--) {
-      const swapIndex = Math.floor(Math.random() * (i + 1));
-      const temp = shuffledArray[i];
-      shuffledArray[i] = shuffledArray[swapIndex];
-      shuffledArray[swapIndex] = temp;
-    }
-    return shuffledArray;
-  } */
-
   
-
-  // Select and check answer
+ // Select and check answer
   const onAnswerSelected = (answer ,id) => {
     setChecked(true);
     setSelectedAnswerIndex(true);
@@ -98,7 +69,7 @@ import dynamic from "next/dynamic";
 
         }
     );
-    if (activeQuestion !== shuffledQuestions.length -1) {
+    if (activeQuestion != '4') {
       setActiveQuestion((prev) => prev +1);
     } else{
       setActiveQuestion(0);
@@ -158,7 +129,7 @@ import dynamic from "next/dynamic";
         {/* <h3>{questions[activeQuestion].question}</h3> */}
         <h3>{question}</h3>
         <ul className="grid grid-cols-2 grid-rows-50 grid-rows-50 place-items-center box-border gap-3">
-         {answers.map((answer, id)=>(
+         {shuffledAnswers.map((answer, id)=>(
           <li
            key={answer.id}
            onClick={() => onAnswerSelected(answer, id)}
@@ -171,7 +142,7 @@ import dynamic from "next/dynamic";
         {renderAnswerSymbol()}
         {checked ? (<div className="flex items-center justify-center h-24"> 
           <button onClick={nextQuestion} className="bg-blue-500 hover:bg-green-700 text-white font-bold py-4 px-10 rounded"> 
-           {activeQuestion === shuffledQuestions.length -1 ? 'Finish': 'Next'}
+           {activeQuestion == '4' ? 'Finish': 'Next'}
           </button>
          </div>
         
@@ -180,7 +151,7 @@ import dynamic from "next/dynamic";
           <button className="bg-grey-500 hover:bg-white-700 text-white font-bold py-4 px-10 rounded"
           disabled
           > 
-           {activeQuestion === shuffledQuestions.length -1 ? 'Finish': 'Next'}
+           {activeQuestion == '4' ? 'Finish': 'Next'}
           </button>
          </div> )} 
 
