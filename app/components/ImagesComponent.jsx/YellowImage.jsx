@@ -2,12 +2,12 @@ import React from 'react'
 import ImageComponent from '../ImageComponent'
 import Image from 'next/image' 
 
-const GiraffeImage = () => {
+const YellowImage = () => {
   return (
     <div>
-      <ImageComponent src="/giraffe.jpg" alt="Giraffe"  />
+      <ImageComponent src="/Yellow.webp" alt="Yellow" />
     </div>
   )
 }
 
-export default GiraffeImage;
+export default YellowImage;
