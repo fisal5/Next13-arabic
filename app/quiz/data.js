@@ -30,7 +30,7 @@ import HorseImage from "../components/ImagesComponent.jsx/horseImage";
 import MouseImage from "../components/ImagesComponent.jsx/mouseImage";
 import OxImage from "../components/ImagesComponent.jsx/oxImage";
 import RoosterImage from "../components/ImagesComponent.jsx/roosterImage";
-import WolfImage from "../components/ImagesComponent.jsx/wolfimage";
+import WolfImage from "../components/ImagesComponent.jsx/wolfImage";
 import WolfSound from "../components/SoundsComponent/wolfSound";
 import MouseSound from "../components/SoundsComponent/mouseSound";
 import RoosterSound from "../components/SoundsComponent/roosterSound";
