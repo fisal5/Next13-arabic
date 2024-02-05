@@ -5,7 +5,7 @@ import PurpleImage from "../components/ImagesComponent.jsx/PurpleImage";
 import YellowImage from "../components/ImagesComponent.jsx/YellowImage";
 import RedSound from "../components/SoundsComponent/redSound";
 import BlueSound from "../components/SoundsComponent/blueSound";
-import YellowSound from "../components/SoundsComponent/yellowsound";
+import YellowSound from "../components/SoundsComponent/yellowSound";
 import PurpleSound from "../components/SoundsComponent/purpleSound";
 import GreenSound from "../components/SoundsComponent/greenSound";
 
