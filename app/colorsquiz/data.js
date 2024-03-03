@@ -17,7 +17,7 @@ import GreyImage from "../components/ImagesComponent.jsx/greyImage";
 import WhiteImage from "../components/ImagesComponent.jsx/whiteImage";
 import BrownImage from "../components/ImagesComponent.jsx/brownImage";
 import PinkSound from "../components/SoundsComponent/pinkSound";
-import PinkImage from "../components/ImagesComponent.jsx/PinkImage";
+import PinkImage from "../components/ImagesComponent.jsx/pinkImage";
 import OrangeSound from "../components/SoundsComponent/orangeSound";
 import OrangeImage from "../components/ImagesComponent.jsx/orangeImage";
 
