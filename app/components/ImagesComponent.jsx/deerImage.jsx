@@ -5,7 +5,7 @@ import ImageComponent from '../ImageComponent'
 const DeerImage = () => {
   return (
     <div>
-      <ImageComponent src="/Deer.jpeg" alt="Deer" />
+      <ImageComponent src="/Deer.webp" alt="Deer" />
     </div>
   )
 }

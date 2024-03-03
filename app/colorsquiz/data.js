@@ -8,6 +8,20 @@ import BlueSound from "../components/SoundsComponent/blueSound";
 import YellowSound from "../components/SoundsComponent/yellowSound";
 import PurpleSound from "../components/SoundsComponent/purpleSound";
 import GreenSound from "../components/SoundsComponent/greenSound";
+import BlackImage from "../components/ImagesComponent.jsx/blackImage";
+import BlackSound from "../components/SoundsComponent/blackSound";
+import GreySound from "../components/SoundsComponent/greySound";
+import WhiteSound from "../components/SoundsComponent/whiteSound";
+import BrownSound from "../components/SoundsComponent/brownSound";
+import GreyImage from "../components/ImagesComponent.jsx/greyImage";
+import WhiteImage from "../components/ImagesComponent.jsx/whiteImage";
+import BrownImage from "../components/ImagesComponent.jsx/brownImage";
+import PinkSound from "../components/SoundsComponent/pinkSound";
+import PinkImage from "../components/ImagesComponent.jsx/PinkImage";
+import OrangeSound from "../components/SoundsComponent/orangeSound";
+import OrangeImage from "../components/ImagesComponent.jsx/orangeImage";
+
+
 
 
 
@@ -69,6 +83,74 @@ export const quiz = {
         ],
         correctAnswer: { id: 1, value: (<GreenImage />) },
       },
+      {
+        id: 6,
+        question: (<BlackSound />),
+        answers: [
+          { id: 1, value: (<BlackImage />) },
+          { id: 2, value: (<GreenImage />) },
+          { id: 3, value: (<RedImage />) },
+          { id: 4, value: (<YellowImage />) },
+        ],
+        correctAnswer: { id: 1, value: (<BlackImage />) },
+      },
+      {
+        id: 7,
+        question: (<WhiteSound />),
+        answers: [
+          { id: 1, value: (<WhiteImage />) },
+          { id: 2, value: (<BrownImage />) },
+          { id: 3, value: (<RedImage />) },
+          { id: 4, value: (<YellowImage />) },
+        ],
+        correctAnswer: { id: 1, value: (<WhiteImage />) },
+      },
+      {
+        id: 8,
+        question: (<BrownSound />),
+        answers: [
+          { id: 1, value: (<BrownImage />) },
+          { id: 2, value: (<RedImage />) },
+          { id: 3, value: (<WhiteImage />) },
+          { id: 4, value: (<GreyImage />) },
+        ],
+        correctAnswer: { id: 1, value: (<BrownImage />) },
+      },
+      {
+        id: 9,
+        question: (<GreySound />),
+        answers: [
+          { id: 1, value: (<GreyImage />) },
+          { id: 2, value: (<BrownImage />) },
+          { id: 3, value: (<WhiteImage />) },
+          { id: 4, value: (<BlackImage />) },
+        ],
+        correctAnswer: { id: 1, value: (<GreyImage />) },
+      },
+      {
+        id: 10,
+        question: (<PinkSound />),
+        answers: [
+          { id: 1, value: (<RedImage />) },
+          { id: 2, value: (<PinkImage />) },
+          { id: 3, value: (<PurpleImage />) },
+          { id: 4, value: (<YellowImage />) },
+        ],
+        correctAnswer: { id: 2, value: (<PinkImage />) },
+      },
+      {
+        id: 11,
+        question: (<OrangeSound />),
+        answers: [
+          { id: 1, value: (<RedImage />) },
+          { id: 2, value: (<OrangeImage />) },
+          { id: 3, value: (<PurpleImage />) },
+          { id: 4, value: (<YellowImage />) },
+        ],
+        correctAnswer: { id: 2, value: (<OrangeImage />) },
+      },
+
+
 
     ],
 };

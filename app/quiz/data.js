@@ -1,7 +1,6 @@
 import BearImage from "../components/ImagesComponent.jsx/BearImage";
 import EagleImage from "../components/ImagesComponent.jsx/eagleImage";
 import ElephantImage from "../components/ImagesComponent.jsx/elephantImage";
-import GirrafeImage from "../components/ImagesComponent.jsx/girrafeImage";
 import LionsImage from "../components/ImagesComponent.jsx/lionsImage";
 import RabbitImage from "../components/ImagesComponent.jsx/rabbitImage";
 import ElephantSound from "../components/SoundsComponent/elephantSound";
@@ -44,8 +43,19 @@ import DeerSound from "../components/SoundsComponent/deerSound";
 import CrocodileSound from "../components/SoundsComponent/crocodileSound";
 import DuckSound from "../components/SoundsComponent/duckSound";
 import OxSound from "../components/SoundsComponent/oxSound";
-
-
+import SnakeImage from "../components/ImagesComponent.jsx/snakeImage";
+import FishSound from "../components/SoundsComponent/fishSound";
+import FishImage from "../components/ImagesComponent.jsx/fishImage";
+import OctopusImage from "../components/ImagesComponent.jsx/octopusImage";
+import SheepImage from "../components/ImagesComponent.jsx/sheepImage";
+import GoatImage from "../components/ImagesComponent.jsx/goatImage";
+import GoatSound from "../components/SoundsComponent/goatSound";
+import SheepSound from "../components/SoundsComponent/sheepSound";
+import SnakeSound from "../components/SoundsComponent/snakeSound";
+import GiraffeImage from "../components/ImagesComponent.jsx/girrafeImage";
+import OctopusSound from "../components/SoundsComponent/octopus";
+import CamelSound from "../components/SoundsComponent/camelSound";
+import CamelImage from "../components/ImagesComponent.jsx/camelImage";
 
 
 
@@ -70,12 +80,12 @@ export const quiz = {
       id: 2,
       question: (<GiraffeSound />),
       answers: [
-        { id: 1, value: (<GirrafeImage />) },
+        { id: 1, value: (<GiraffeImage />) },
         { id: 2, value: (<BearImage />) },
         { id: 3, value: (<RabbitImage />) },
         { id: 4, value: (<EagleImage />) },
       ],
-      correctAnswer: { id: 1, value: (<GirrafeImage />) },
+      correctAnswer: { id: 1, value: (<GiraffeImage />) },
     },
     {
       id: 3,
@@ -92,7 +102,7 @@ export const quiz = {
       id: 4,
       question: (<DogSound />),
       answers: [
-        { id: 1, value: (<GirrafeImage />) },
+        { id: 1, value: (<GiraffeImage />) },
         { id: 2, value: (<LionsImage />) },
         { id: 3, value: (<DogImage />) },
         { id: 4, value: (<EagleImage />) },
@@ -125,7 +135,7 @@ export const quiz = {
       id: 7,
       question: (<CatSound />),
       answers: [
-        { id: 1, value: (<GirrafeImage />) },
+        { id: 1, value: (<GiraffeImage />) },
         { id: 2, value: (<BearImage />) },
         { id: 3, value: (<RabbitImage />) },
         { id: 4, value: (<CatImage />) },
@@ -273,7 +283,7 @@ export const quiz = {
         { id: 3, value: (<FoxImage />) },
         { id: 4, value: (<OxImage />) },
       ],
-      correctAnswer: { id: 4, value: (<CrocodileImage />) },
+      correctAnswer: { id: 1, value: (<CrocodileImage />) },
     },
     {
       id: 21,
@@ -286,6 +296,98 @@ export const quiz = {
       ],
       correctAnswer: { id: 3 , value: (<DuckImage />) },
     },
+    {
+      id: 22,
+      question: (<OxSound />),
+      answers: [
+        { id: 1, value: (<OxImage />) },
+        { id: 2, value: (<FoxImage />) },
+        { id: 3, value: (<RabbitImage />) },
+        { id: 4, value: (<SnakeImage />) },
+      ],
+      correctAnswer: { id: 1 , value: (<OxImage />) },
+    },
+    {
+      id: 23,
+      question: (<SquirrelSound />),
+      answers: [
+        { id: 1, value: (<TigerImage />) },
+        { id: 2, value: (<WolfImage />) },
+        { id: 3, value: (<SquirrelImage />) },
+        { id: 4, value: (<ChickenImage />) },
+      ],
+      correctAnswer: { id: 3 , value: (<SquirrelImage />) },
+    },
+    {
+      id: 24,
+      question: (<FishSound />),
+      answers: [
+        { id: 1, value: (<FishImage />) },
+        { id: 2, value: (<RabbitImage />) },
+        { id: 3, value: (<OctopusImage />) },
+        { id: 4, value: (<LionsImage />) },
+      ],
+      correctAnswer: { id: 1 , value: (<FishImage />) },
+    },
+    {
+      id: 24,
+      question: (<OctopusSound />),
+      answers: [
+        { id: 1, value: (<FoxImage />) },
+        { id: 2, value: (<SnakeImage />) },
+        { id: 3, value: (<OctopusImage />) },
+        { id: 4, value: (<ElephantImage />) },
+      ],
+      correctAnswer: { id: 3 , value: (<OctopusImage />) },
+    },
+    {
+      id: 25,
+      question: (<SnakeSound />),
+      answers: [
+        { id: 1, value: (<SquirrelImage />) },
+        { id: 2, value: (<SnakeImage />) },
+        { id: 3, value: (<FishImage />) },
+        { id: 4, value: (<GiraffeImage />) },
+      ],
+      correctAnswer: { id: 2 , value: (<SnakeImage />) },
+    },
+    {
+      id: 26,
+      question: (<SheepSound />),
+      answers: [
+        { id: 1, value: (<SheepImage />) },
+        { id: 2, value: (<MouseImage />) },
+        { id: 3, value: (<DuckImage />) },
+        { id: 4, value: (<GiraffeImage />) },
+      ],
+      correctAnswer: { id: 1 , value: (<SheepImage />) },
+    },
+    {
+      id: 27,
+      question: (<GoatSound />),
+      answers: [
+        { id: 1, value: (<SquirrelImage />) },
+        { id: 2, value: (<SnakeImage />) },
+        { id: 3, value: (<FishImage />) },
+        { id: 4, value: (<GoatImage />) },
+      ],
+      correctAnswer: { id: 4 , value: (<GoatImage />) },
+    },
+    {
+      id: 28,
+      question: (<CamelSound />),
+      answers: [
+        { id: 1, value: (<SquirrelImage />) },
+        { id: 2, value: (<FoxImage />) },
+        { id: 3, value: (<TigerImage />) },
+        { id: 4, value: (<CamelImage />) },
+      ],
+      correctAnswer: { id: 4 , value: (<CamelImage />) },
+    },
+    
+    
+    
+
 
 
 

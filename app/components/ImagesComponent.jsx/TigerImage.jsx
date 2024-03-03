@@ -5,7 +5,7 @@ import Image from 'next/image'
 const TigerImage = () => {
   return (
     <div>
-      <ImageComponent src="/tiger.jpeg" alt="TIGER" />
+      <ImageComponent src="/tiger.webp" alt="TIGER" />
     </div>
   )
 }
