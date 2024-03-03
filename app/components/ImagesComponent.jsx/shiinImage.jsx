@@ -5,7 +5,7 @@ import ImageComponent from '../ImageComponent'
 const ShiinImage = () => {
   return (
     <div>
-      <ImageComponent src="/Shiin.jpeg" alt="Shiin letter" />
+      <ImageComponent src="/shiin.jpeg" alt="Shiin letter" />
     </div>
   )
 }
