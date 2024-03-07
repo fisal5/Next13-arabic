@@ -48,7 +48,7 @@ import LaamSound from "../components/SoundsComponent/laamSound";
 import MiimSound from "../components/SoundsComponent/miimSound";
 import NuunSound from "../components/SoundsComponent/nuunSound";
 import WaawSound from "../components/SoundsComponent/waawSound"; 
-import YaaeSound from "../components/SoundsComponent/yaaSound";
+import YaaSound from "../components/SoundsComponent/yaaSound";
 import HaeSound from "../components/SoundsComponent/haeSound";
 import QaafSound from "../components/SoundsComponent/qaafSound";
 import HaeImage from "../components/ImagesComponent.jsx/haeImage";
@@ -326,7 +326,7 @@ export const quiz = {
       },
       {
         id: 22,
-        question: (<YaaeSound />),
+        question: (<YaaSound />),
         answers: [
           { id: 1, value: (<TaaImage />) },
           { id: 2, value: (<AlifImage />) },
