@@ -5,7 +5,7 @@ import ImageComponent from '../ImageComponent'
 const ThreeImage = () => {
   return (
     <div>
-      <ImageComponent src="/Three.png" alt="Three" />
+      <ImageComponent src="/three.png" alt="Three" />
     </div>
   )
 }
