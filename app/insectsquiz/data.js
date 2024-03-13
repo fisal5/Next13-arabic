@@ -10,7 +10,7 @@ import ButterflyImage from "../components/ImagesComponent.jsx/butterflyImage";
 import CockroachImage from "../components/ImagesComponent.jsx/cockroachImage";
 import GresshopperImage from "../components/ImagesComponent.jsx/gresshopperImage";
 import GresshopperSound from "../components/SoundsComponent/gresshopperSound";
-import CockroachSound from "../components/SoundsComponent/CockroachSound";
+import CockroachSound from "../components/SoundsComponent/cockroachSound";
 import MosquitoSound from "../components/SoundsComponent/mosquitoSound";
 import ButterflySound from "../components/SoundsComponent/butterflySound";
 import FlyinsectSound from "../components/SoundsComponent/flyinsectSound";
