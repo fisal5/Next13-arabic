@@ -56,6 +56,8 @@ import GiraffeImage from "../components/ImagesComponent.jsx/girrafeImage";
 import OctopusSound from "../components/SoundsComponent/octopus";
 import CamelSound from "../components/SoundsComponent/camelSound";
 import CamelImage from "../components/ImagesComponent.jsx/camelImage";
+import PenguinSound from "../components/SoundsComponent/penguinSound";
+import PenguinImage from "../components/ImagesComponent.jsx/penguinImage";
 
 
 
@@ -383,6 +385,17 @@ export const quiz = {
         { id: 4, value: (<CamelImage />) },
       ],
       correctAnswer: { id: 4 , value: (<CamelImage />) },
+    },
+    {
+      id: 29,
+      question: (<PenguinSound />),
+      answers: [
+        { id: 1, value: (<PenguinImage />) },
+        { id: 2, value: (<EagleImage />) },
+        { id: 3, value: (<LionsImage />) },
+        { id: 4, value: (<SquirrelImage />) },
+      ],
+      correctAnswer: { id: 1, value: (<PenguinImage />) },
     },
     
     
