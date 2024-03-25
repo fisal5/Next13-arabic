@@ -5,6 +5,7 @@ import { quiz } from './data';
 import { useEffect ,useState } from 'react';
 import shuffle from '../components/shuffle';
 import dynamic from "next/dynamic";
+import HomeButton from "../components/homeButton";
 
 
 
@@ -127,7 +128,12 @@ import dynamic from "next/dynamic";
       <div className=" p-0 border-0 rounded ">{!showResult ? (
        <div >
         {/* <h3>{questions[activeQuestion].question}</h3> */}
-        <h3>{question}</h3>
+        <div className="flex flex-wrap justify-end gap-96">
+         <h3 className="px-16">{question}</h3>
+         <div className="px-8">
+          <HomeButton  />
+         </div>
+        </div>
         <ul className="grid grid-cols-2 grid-rows-50 grid-rows-50 place-items-center box-border gap-3">
          {shuffledAnswers.map((answer, id)=>(
           <li
@@ -168,11 +174,14 @@ import dynamic from "next/dynamic";
               </span>
              </p> 
               <div className= 'basis-full h-0'> </div>
-             <div>
+             <div className="flex flex-wrap justify-center gap-24">
                <button className="bg-blue-500 hover:bg-green-700 text-white font-bold py-4 px-10 rounded"
                 onClick={() => window.location.reload()}>
                   Restart
                </button>
+               <div className="px-8">
+                   <HomeButton  />
+                </div>
              </div>
           </div> 
 
