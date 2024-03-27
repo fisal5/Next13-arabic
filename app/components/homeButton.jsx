@@ -9,7 +9,7 @@ const HomeButton = () => {
     <div>
       <Link href="/">
         <div>
-        <button className="bg-blue-500 hover:bg-green-700 text-white font-bold py-4 px-4 rounded-full">
+        <button className="bg-blue-500 hover:bg-green-700 text-white font-bold py-2 px-3 sm:py-4 sm:px-4 rounded-full">
           <FontAwesomeIcon icon={faHome} />
         </button>
         </div>

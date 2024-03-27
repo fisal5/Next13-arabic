@@ -128,9 +128,9 @@ import HomeButton from '../components/homeButton';
       <div className=" p-0 border-0 rounded ">{!showResult ? (
        <div >
         {/* <h3>{questions[activeQuestion].question}</h3> */}
-        <div className="flex flex-wrap justify-end gap-96">
-         <h3 className="px-16">{question}</h3>
-         <div className="px-8">
+        <div className="flex flex-nowrap justify-center sm:justify-end sm:gap-2 md:gap-20 lg:gap-60 xl:gap-96">
+         <h3 className="pl-16 sm:px-20 md:px-28 lg:px-20">{question}</h3>
+         <div className="pt-6 pl-12 sm:pr-8">
           <HomeButton  />
          </div>
         </div>
@@ -176,11 +176,14 @@ import HomeButton from '../components/homeButton';
               </span>
              </p> 
              <div className= 'basis-full h-0'> </div>
-             <div>
+             <div className="flex flex-wrap justify-center gap-24">
                <button className="bg-blue-500 hover:bg-green-700 text-white font-bold py-4 px-10 rounded"
                 onClick={() => window.location.reload()}>
                   Restart
                </button>
+               <div className="px-8">
+                   <HomeButton  />
+                </div>
              </div>
           </div> 
 

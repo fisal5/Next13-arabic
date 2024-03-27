@@ -129,7 +129,7 @@ import HomeButton from "../components/homeButton";
        <div >
         {/* <h3>{questions[activeQuestion].question}</h3> */}
         <div className="flex flex-wrap justify-end gap-96">
-         <h3 className="px-16">{question}</h3>
+         <h3 className="pl-8">{question}</h3>
          <div className="px-8">
           <HomeButton  />
          </div>
@@ -174,11 +174,14 @@ import HomeButton from "../components/homeButton";
               </span>
              </p> 
               <div className= 'basis-full h-0'> </div>
-             <div>
+              <div className="flex flex-wrap justify-center gap-24">
                <button className="bg-blue-500 hover:bg-green-700 text-white font-bold py-4 px-10 rounded"
                 onClick={() => window.location.reload()}>
                   Restart
                </button>
+               <div className="px-8">
+                   <HomeButton  />
+                </div>
              </div>
           </div> 
 
