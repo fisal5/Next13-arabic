@@ -6,6 +6,7 @@ import { useEffect ,useState } from 'react';
 import shuffle from '../components/shuffle';
 import dynamic from "next/dynamic";
 import HomeButton from '../components/homeButton';
+import RestartButton from '../components/restartButton';
 
 
 
@@ -129,6 +130,9 @@ import HomeButton from '../components/homeButton';
        <div >
         {/* <h3>{questions[activeQuestion].question}</h3> */}
         <div className="flex flex-nowrap justify-center sm:justify-end sm:gap-2 md:gap-20 lg:gap-60 xl:gap-96">
+         <div className="pt-6">
+          <RestartButton />
+         </div>
          <h3 className="pl-16 sm:px-20 md:px-28 lg:px-20">{question}</h3>
          <div className="pt-6 pl-12 sm:pr-8">
           <HomeButton  />
