@@ -5,7 +5,7 @@ import ImageComponent from '../ImageComponent'
 const PullImage = () => {
   return (
     <div>
-      <ImageComponent src="/pull.webp" alt="Pull" />
+      <ImageComponent src="/Pull.webp" alt="Pull" />
     </div>
   )
 }

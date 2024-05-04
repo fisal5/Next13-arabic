@@ -5,7 +5,7 @@ import ImageComponent from '../ImageComponent'
 const ClimbImage = () => {
   return (
     <div>
-      <ImageComponent src="/Climb.webp" alt="Climb" />
+      <ImageComponent src="/climb.webp" alt="Climb" />
     </div>
   )
 }
