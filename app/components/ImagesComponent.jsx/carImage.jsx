@@ -5,7 +5,7 @@ import ImageComponent from '../ImageComponent'
 const CarImage = () => {
   return (
     <div>
-      <ImageComponent src="/car.webp" alt="Webp" />
+      <ImageComponent src="/car.webp" alt="car" />
     </div>
   )
 }

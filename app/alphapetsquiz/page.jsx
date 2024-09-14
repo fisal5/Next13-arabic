@@ -97,7 +97,7 @@ import RestartButton from '../components/restartButton';
     
   };
 
-  //correct and wrong symbols
+ //correct and wrong symbols
   const renderAnswerSymbol = () => {
     if (checked) {
       if (selectedAnswer) {
@@ -118,7 +118,7 @@ import RestartButton from '../components/restartButton';
       }
     }
     return null;
-  };
+  }; 
 
 
 
