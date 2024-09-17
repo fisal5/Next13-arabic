@@ -10,9 +10,9 @@ function Picture({ id, url, inBoard }) {
 
     }),
 }));
-  /*  const handleTouchStart = (event) => {
+    const handleTouchStart = (event) => {
     event.preventDefault(); // Prevent default touch context menu
-    }; */
+    }; 
 
   return (
   <img
@@ -23,7 +23,7 @@ function Picture({ id, url, inBoard }) {
    style={{ border: isDragging ? "5px solid blue" : "0px",
    height: inBoard ? "70px" : "100px"  // Reduced height if inBoard is true
    }}
-   //onTouchStart={handleTouchStart} // Add touch event handler
+   onTouchStart={handleTouchStart} // Add touch event handler
    />
 
   );
