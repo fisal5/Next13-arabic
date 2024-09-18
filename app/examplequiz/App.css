@@ -12,6 +12,9 @@
 }
 img {
     margin: 5px;
+    user-select: none; /* Prevents text selection on touch */
+    -webkit-user-drag: none; /* Prevents the default image drag behavior */
+    touch-action: none; /* Prevents built-in touch gestures */
 }
 
 .Picture {
