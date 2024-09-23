@@ -1,4 +1,4 @@
-/*import React from 'react'
+import React from 'react'
 import { useDrag } from 'react-dnd';
 
 function Picture({ id, url, inBoard }) {
@@ -14,7 +14,7 @@ function Picture({ id, url, inBoard }) {
     event.preventDefault(); // Prevent default touch context menu
     }; */
 
-  {/*return (
+  return (
   <img
    ref={drag}
    src={url}
@@ -29,7 +29,7 @@ function Picture({ id, url, inBoard }) {
   );
 }
 
-export default Picture; */}
+export default Picture; 
 
 /*import React, { useRef } from 'react';
 import { useDrag } from 'react-dnd';
@@ -89,76 +89,5 @@ function Picture({ id, url, inBoard }) {
 }
 
 export default Picture; */}
-import React, { useRef } from 'react';
-import { useDrag } from 'react-dnd';
-
-function Picture({ id, url, inBoard, onTouchStart, onTouchMove, onTouchEnd }) {
-    const [{ isDragging }, drag] = useDrag(() => ({
-        type: "image",
-        item: { id: id },
-        collect: (monitor) => ({
-            isDragging: !!monitor.isDragging(),
-        }),
-    }));
-
-    // References to store touch positions
-    const touchStartX = useRef(0);
-    const touchStartY = useRef(0);
-
-    // Handle touch start
-    const handleTouchStart = (event) => {
-        event.preventDefault(); // Prevent context menu and default touch behavior
-        const touch = event.touches[0];
-        touchStartX.current = touch.clientX;
-        touchStartY.current = touch.clientY;
-
-        // Call the parent function
-        if (onTouchStart) {
-            onTouchStart(id);
-        }
-    };
-
-    // Handle touch move
-    const handleTouchMove = (event) => {
-        event.preventDefault(); // Prevent default touch behavior
-        const touch = event.touches[0];
-        const deltaX = touch.clientX - touchStartX.current;
-        const deltaY = touch.clientY - touchStartY.current;
-
-        // Call the parent function
-        if (onTouchMove) {
-            onTouchMove(id, deltaX, deltaY);
-        }
-    };
-
-    // Handle touch end
-    const handleTouchEnd = (event) => {
-        event.preventDefault(); // Prevent default touch behavior
-
-        // Call the parent function
-        if (onTouchEnd) {
-            onTouchEnd(id);
-        }
-    };
-
-    return (
-        <img
-            ref={drag}
-            src={url}
-            id={id}
-            width="100px"
-            style={{
-                border: isDragging ? "5px solid blue" : "0px",
-                height: inBoard ? "70px" : "100px",
-                touchAction: 'none' // Prevent pinch-zoom or other touch gestures
-            }}
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleTouchEnd}
-        />
-    );
-}
-
-export default Picture;
 
 
