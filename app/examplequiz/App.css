@@ -22,7 +22,7 @@ img {
     height: 100px;
     cursor: pointer;
     margin: 0 10px;
-    //touch-action: none; /* Prevent touch context menu */
+    touch-action: none; /* Prevent touch context menu */
   }
 
 .board { width: 100px;
