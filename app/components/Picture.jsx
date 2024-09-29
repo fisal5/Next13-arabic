@@ -1,3 +1,4 @@
+import { NodeNextRequest } from 'next/dist/server/base-http/node';
 import React from 'react'
 import { useDrag } from 'react-dnd';
 
@@ -21,7 +22,8 @@ function Picture({ id, url, inBoard }) {
    id={id}
    width="100px" 
    style={{ border: isDragging ? "5px solid blue" : "0px",
-   height: inBoard ? "70px" : "100px"  // Reduced height if inBoard is true
+   height: inBoard ? "70px" : "100px", // Reduced height if inBoard is true
+   className= touch-none
    }}
    //onTouchStart={handleTouchStart} // Add touch event handler
    />
