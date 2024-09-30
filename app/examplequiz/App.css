@@ -10,6 +10,10 @@
     justify-content: center;
     flex-wrap: wrap;
     touch-action: none; 
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    user-select: none; /* For other browsers */
+    touch-callout: none; /* For other browsers *
 }
 .img {
     margin: 5px;
@@ -28,6 +32,10 @@
     cursor: pointer;
     margin: 0 10px;
     touch-action: none; /* Prevent touch context menu */
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    user-select: none; /* For other browsers */
+    touch-callout: none; /* For other browsers */
   }
 
 .board { width: 100px;
