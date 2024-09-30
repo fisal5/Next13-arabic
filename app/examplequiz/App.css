@@ -17,9 +17,9 @@
     -webkit-touch-callout: none;
     user-select: none; /* For other browsers */
     touch-callout: none; /* For other browsers */
-    //user-select: none; /* Prevents text selection on touch */
-    //-webkit-user-drag: none; /* Prevents the default image drag behavior */
-    //touch-action: none; /* Prevents built-in touch gestures */
+    user-select: none; /* Prevents text selection on touch */
+    -webkit-user-drag: none; /* Prevents the default image drag behavior */
+    touch-action: none; /* Prevents built-in touch gestures */
 }
 
 .Picture {
