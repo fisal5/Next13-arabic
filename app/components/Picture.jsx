@@ -24,7 +24,7 @@ function Picture({ id, url, inBoard }) {
    style={{ border: isDragging ? "5px solid blue" : "0px",
    height: inBoard ? "70px" : "100px", // Reduced height if inBoard is true
    }}
-   className= "touch-none"
+   className= "img"
    //onTouchStart={handleTouchStart} // Add touch event handler
    />
 
