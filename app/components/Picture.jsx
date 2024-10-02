@@ -1,4 +1,4 @@
-import { NodeNextRequest } from 'next/dist/server/base-http/node';
+/*import { NodeNextRequest } from 'next/dist/server/base-http/node';
 import React from 'react'
 import { useDrag } from 'react-dnd';
 
@@ -15,7 +15,7 @@ function Picture({ id, url, inBoard }) {
     event.preventDefault(); // Prevent default touch context menu
     }; */
 
-  return (
+  { /*return (
   <img
    ref={drag}
    src={url}
@@ -31,7 +31,7 @@ function Picture({ id, url, inBoard }) {
   );
 }
 
-export default Picture; 
+export default Picture; */}
 
 /*import React, { useRef } from 'react';
 import { useDrag } from 'react-dnd';
@@ -91,5 +91,57 @@ function Picture({ id, url, inBoard }) {
 }
 
 export default Picture; */}
+
+import React, { useRef } from 'react';
+import { useDrag } from 'react-dnd';
+
+function Picture({ id, url, inBoard }) {
+  const [{ isDragging }, drag] = useDrag(() => ({
+    type: 'image',
+    item: { id: id },
+    collect: (monitor) => ({
+      isDragging: !!monitor.isDragging(),
+    }),
+  }));
+
+  const touchTimeout = useRef(null);
+
+  const handleContextMenu = (e) => {
+    e.preventDefault(); // Prevent right-click context menu
+  };
+
+  const handleTouchStart = (e) => {
+    touchTimeout.current = setTimeout(() => {
+      e.preventDefault(); // Prevent long-press context menu on touch devices
+    }, 500); // Adjust the time based on your long press threshold
+  };
+
+  const handleTouchEnd = () => {
+    // Clear the timeout if the touch ends before long press
+    if (touchTimeout.current) {
+      clearTimeout(touchTimeout.current);
+    }
+  };
+
+  return (
+    <img
+      ref={drag}
+      src={url}
+      id={id}
+      width="100px"
+      style={{
+        border: isDragging ? '5px solid blue' : '0px',
+        height: inBoard ? '70px' : '100px', // Adjust height if inBoard is true
+      }}
+      className="img"
+      onContextMenu={handleContextMenu} // Prevent right-click menu
+      onTouchStart={handleTouchStart}   // Detect long press
+      onTouchEnd={handleTouchEnd}       // Clear timeout on touch end
+    />
+  );
+}
+
+export default Picture;
+
 
 
