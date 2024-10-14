@@ -8,6 +8,7 @@
     margin: 10px;
     display: flex;
     justify-content: center;
+    flex-direction: column;
     flex-wrap: wrap;
     touch-action: none; 
     -webkit-user-select: none;

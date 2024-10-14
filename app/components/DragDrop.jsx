@@ -189,16 +189,33 @@ const checkAnswer = () => {
 
 
   return (
-    <div>
+    <div className="flex flex-nowrap">
       <div className="Pictures">
         {shuffledPictureList.map((picture) => (
           <Picture url={picture.url} id={picture.id} key={picture.id}/>
         ))}
       </div>
-    <div className="flex flex-wrap justify-center">
+      <div className="Board" >
+       
+          <div className="board" ref={drop}>
+            {board.map((picture, index) => (
+              <div
+                key={picture.id}
+                onDragStart={() => (dragPerson.current = index)}
+                onDragEnter={() => (draggedOverPerson.current = index)}
+                onDragEnd={handleSort}
+                onDragOver={(e) => e.preventDefault()}
+              >
+                <Picture  url={picture.url} id={picture.id} inBoard={true}/>
+              </div>
+            ))}
+          </div>
+        
+      </div>
+    <div>
       <ul>
        <li>
-        <div className="flex items-center justify-center h-24 pt-6 pr-64">
+        <div>
          <button onClick={checkAnswer} 
           className="bg-blue-500 hover:bg-green-700 text-white font-bold py-2 px-5 sm:py-4 sm:px-10 rounded"
            >Check</button>
@@ -222,26 +239,11 @@ const checkAnswer = () => {
          <div className="pr-64 pt-6">{renderAnswerSymbol()}</div> 
        </li>
       </ul>
-
-      <div className="Board" >
-       
-          <div className="board" ref={drop}>
-            {board.map((picture, index) => (
-              <div
-                key={picture.id}
-                onDragStart={() => (dragPerson.current = index)}
-                onDragEnter={() => (draggedOverPerson.current = index)}
-                onDragEnd={handleSort}
-                onDragOver={(e) => e.preventDefault()}
-              >
-                <Picture  url={picture.url} id={picture.id} inBoard={true}/>
-              </div>
-            ))}
-          </div>
-        
-      </div>
     </div>  
     </div>
+
+      
+    
   );
 }
 
