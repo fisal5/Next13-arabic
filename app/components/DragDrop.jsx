@@ -195,6 +195,7 @@ const checkAnswer = () => {
           <Picture url={picture.url} id={picture.id} key={picture.id}/>
         ))}
       </div>
+    <div> 
       <div className="Board" >
        
           <div className="board" ref={drop}>
@@ -213,7 +214,12 @@ const checkAnswer = () => {
         
       </div>
     <div>
-      <ul>
+      <ul className="flex flex-wrap">
+      <li>
+         <div>
+            <RestartButton />
+          </div>
+        </li>
        <li>
         <div>
          <button onClick={checkAnswer} 
@@ -222,13 +228,7 @@ const checkAnswer = () => {
         </div>
         </li>
         <li>
-        {/* <div className="flex flex-nowrap justify-center sm:justify-end sm:gap-2 md:gap-20 lg:gap-60 xl:gap-96"> */}
-         <div className="pt-6">
-            <RestartButton />
-          </div>
-        </li>
-        <li>
-        <div className="pt-6 pl-12 sm:pr-8">
+        <div>
           <HomeButton  />
          </div>
         </li>
@@ -239,7 +239,8 @@ const checkAnswer = () => {
          <div className="pr-64 pt-6">{renderAnswerSymbol()}</div> 
        </li>
       </ul>
-    </div>  
+    </div> 
+    </div> 
     </div>
 
       
