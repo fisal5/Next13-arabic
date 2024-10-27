@@ -131,7 +131,7 @@ function Picture({ id, url, inBoard }) {
       width="100px"
       style={{
         border: isDragging ? '5px solid blue' : '0px',
-        height: inBoard ? '70px' : '100px', // Adjust height if inBoard is true
+        height: inBoard ? '70px' : '70px', // Adjust height if inBoard is true
       }}
       className="img"
       onContextMenu={handleContextMenu} // Prevent right-click menu

@@ -189,7 +189,7 @@ const checkAnswer = () => {
 
 
   return (
-    <div className="flex flex-nowrap">
+    <div className="flex flex-nowrap ">
       <div className="Pictures">
         {shuffledPictureList.map((picture) => (
           <Picture url={picture.url} id={picture.id} key={picture.id}/>

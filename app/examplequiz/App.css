@@ -1,7 +1,7 @@
 .App{
     text-align: center;
     width: 100vw;
-    height: 100%;
+    //height: 100%;
     justify-content: center;
     display: flex;
     flex-wrap: wrap;
@@ -11,9 +11,10 @@
 .Pictures {
     margin: 10px;
     display: flex;
-    justify-content: center;
+    //height: 100%;
+    justify-content: flex-start;
     flex-direction: column;
-    flex-wrap: wrap;
+    //flex-wrap: nowrap;
     touch-action: none; 
     -webkit-user-select: none;
     -webkit-touch-callout: none;
@@ -33,7 +34,7 @@
 
 .Picture {
     width: 100px;
-    height: 100px;
+    height: 50px;
     cursor: pointer;
     margin: 0 10px;
     touch-action: none; /* Prevent touch context menu */
@@ -44,7 +45,7 @@
   }
 
 .board { width: 100px;
-    height: 800px;
+    height: 500px;
 
 }
 
@@ -59,3 +60,11 @@
     align-items: center;
     flex-wrap: wrap;
 }
+
+html { 
+    //height: 100%;
+  }
+
+  body { 
+    //height: 100%;
+  }
