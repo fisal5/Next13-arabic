@@ -23,6 +23,7 @@
 }
 .img {
     margin: 5px;
+    height: 70px;
     //-webkit-user-select: none;
     //-webkit-touch-callout: none;
     //user-select: none; /* For other browsers */
@@ -63,11 +64,15 @@
 
 @media screen and (max-width:480px){
     .board { width: 50px;
-        height: 500px;
+        height: 400px;
     }
     .Board {
         width: 150px;
-        height: 500px;
+        height: 400px;
     }
+    .img {
+        height: 50px;
+      }
+
 
 }
