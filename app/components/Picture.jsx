@@ -113,7 +113,7 @@ function Picture({ id, url, inBoard }) {
   const handleTouchStart = (e) => {
     touchTimeout.current = setTimeout(() => {
       e.preventDefault(); // Prevent long-press context menu on touch devices
-    }, 500); // Adjust the time based on your long press threshold
+    }, 100); // Adjust the time based on your long press threshold
   };
 
   const handleTouchEnd = () => {

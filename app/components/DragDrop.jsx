@@ -6,6 +6,9 @@ import { useDrop } from "react-dnd";
 import shuffle from './shuffle';
 import RestartButton from './restartButton';
 import HomeButton from "./homeButton";
+import handleContextMenu from "./Picture";
+import handleTouchStart from "./Picture";
+import handleTouchEnd from "./Picture";
 
 
 
@@ -206,6 +209,9 @@ const checkAnswer = () => {
                 onDragEnter={() => (draggedOverPerson.current = index)}
                 onDragEnd={handleSort}
                 onDragOver={(e) => e.preventDefault()}
+                onContextMenu={handleContextMenu} // Prevent right-click menu
+                onTouchStart={handleTouchStart}   // Detect long press
+                onTouchEnd={handleTouchEnd}       // Clear timeout on touch end
               >
                 <Picture  url={picture.url} id={picture.id} inBoard={true}/>
               </div>
