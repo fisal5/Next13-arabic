@@ -1,12 +1,12 @@
 import React from 'react'
 import SoundButton from '../soundButton';
 
-const FatehaSound = () => {
+const Wudu2Sound = () => {
   return (
     <div>
-      <SoundButton audioSrc="/fateha.mp3" />
+      <SoundButton audioSrc="/wudu2.mp3" />
     </div>
   )
 };
 
-export default FatehaSound;
+export default Wudu2Sound;

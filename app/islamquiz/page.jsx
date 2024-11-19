@@ -5,7 +5,7 @@ import { quiz } from './data';
 import { useEffect ,useState } from 'react';
 import shuffle from '../components/shuffle';
 import dynamic from "next/dynamic";
-import HomeButton from '../components/homeButton';
+import HomeButton from "../components/homeButton";
 import RestartButton from '../components/restartButton';
 
 
@@ -22,7 +22,7 @@ import RestartButton from '../components/restartButton';
     score:0,
     correctAnswers:0,
     wrongAnswers: 0
-  }); 
+  });
 
 /* usestate will run the shuffle function when the state is initialized.
    this will prevent shuffling the questions every time rendering happens */
@@ -131,15 +131,14 @@ import RestartButton from '../components/restartButton';
         {/* <h3>{questions[activeQuestion].question}</h3> */}
         <div className="flex flex-nowrap justify-center sm:justify-end sm:gap-2 md:gap-20 lg:gap-60 xl:gap-96">
          <div className="pt-6">
-          <RestartButton />
-         </div>
+            <RestartButton />
+          </div>
          <h3 className="pl-16 sm:px-20 md:px-28 lg:px-20">{question}</h3>
          <div className="pt-6 pl-12 sm:pr-8">
           <HomeButton  />
          </div>
         </div>
         
-
         <ul className="grid grid-cols-2 grid-rows-50 grid-rows-50 place-items-center box-border gap-3">
          {shuffledAnswers.map((answer, id)=>(
           <li
@@ -185,7 +184,7 @@ import RestartButton from '../components/restartButton';
                {result.correctAnswers} 
               </span>
              </p> 
-             <div className= 'basis-full h-0'> </div>
+              <div className= 'basis-full h-0'> </div>
              <div className="flex flex-wrap justify-center gap-24">
                <button className="bg-blue-500 hover:bg-green-700 text-white font-bold py-4 px-10 rounded"
                 onClick={() => window.location.reload()}>
@@ -217,6 +216,3 @@ import RestartButton from '../components/restartButton';
   
 
    export default dynamic (() => Promise.resolve(page), {ssr: false})
-
-
-
