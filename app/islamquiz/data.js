@@ -13,7 +13,7 @@ import TashahuudSound from "../components/SoundsComponent/tashahuudSound";
 import TasleemSound from "../components/SoundsComponent/tasleemSound";
 import Do3a2Sound from "../components/SoundsComponent/do3a2Sound";
 import MasjedSound from "../components/SoundsComponent/masjedSound";
-import Ka3baSound from "../components/SoundsComponent/Ka3baSound";
+import Ka3baSound from "../components/SoundsComponent/ka3baSound";
 import FatehaImage from "../components/ImagesComponent.jsx/fatehaImage";
 import FatehaSound from "../components/SoundsComponent/airplaneSound";
 import Ka3baImage from "../components/ImagesComponent.jsx/ka3baImage";
