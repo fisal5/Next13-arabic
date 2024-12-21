@@ -20,6 +20,8 @@ import Ka3baImage from "../components/ImagesComponent.jsx/ka3baImage";
 import Do3a2Image from "../components/ImagesComponent.jsx/do3a2Image";
 import TasleemImage from "../components/ImagesComponent.jsx/tasleemImage";
 import TashahuudImage from "../components/ImagesComponent.jsx/tashahuudImage";
+import Rkoo3Image from "../components/ImagesComponent.jsx/rkoo3Image";
+import TakbeerImage from "../components/ImagesComponent.jsx/takbeerImage";
 
 
 
@@ -92,50 +94,49 @@ export const quiz = {
         ],
         correctAnswer: { id: 4, value: (<ka3baImage />) },
       },
-      /*{
-        id: 7,
-        question: (<SevenSound />),
+        { id: 7,
+        question: (<Rkoo3Sound />),
         answers: [
-          { id: 1, value: (<TwoImage />) },
-          { id: 2, value: (<NineImage />) },
-          { id: 3, value: (<ThreeImage />) },
-          { id: 4, value: (<SevenImage />) },
+          { id: 1, value: (<TasleemImage />) },
+          { id: 2, value: (<TashahuudImage />) },
+          { id: 3, value: (<SgoodImage />) },
+          { id: 4, value: (<Rkoo3Image />) },
         ],
-        correctAnswer: { id: 4, value: (<SevenImage />) },
-      },
-      {
+        correctAnswer: { id: 4, value: (<Rkoo3Image />) },
+},
+       {
         id: 8,
-        question: (<EightSound />),
+        question: (<TashahuudSound />),
         answers: [
-          { id: 1, value: (<ThreeImage />) },
-          { id: 2, value: (<SevenImage />) },
-          { id: 3, value: (<SixImage />) },
-          { id: 4, value: (<EightImage />) },
+          { id: 1, value: (<Rkoo3Image />) },
+          { id: 2, value: (<FatehaImage />) },
+          { id: 3, value: (<TakbeerImage />) },
+          { id: 4, value: (<TashahuudImage />) },
         ],
-        correctAnswer: { id: 4, value: (<EightImage />) },
+        correctAnswer: { id: 4, value: (<TashahuudImage />) },
       },
       {
         id: 9,
-        question: (<NineSound />),
+        question: (<Wudu2Sound />),
         answers: [
-          { id: 1, value: (<FourImage />) },
-          { id: 2, value: (<FiveImage />) },
-          { id: 3, value: (<ThreeImage />) },
-          { id: 4, value: (<NineImage />) },
+          { id: 1, value: (<ReadingQuranImage />) },
+          { id: 2, value: (<Do3a2Image />) },
+          { id: 3, value: (<FatehaImage />) },
+          { id: 4, value: (<WudhuImage />) },
         ],
-        correctAnswer: { id: 4, value: (<NineImage />) },
+        correctAnswer: { id: 4, value: (<WudhuImage />) },
       },
       {
         id: 10,
-        question: (<TenSound />),
+        question: (<TakbeerSound/>),
         answers: [
-          { id: 1, value: (<OneImage />) },
-          { id: 2, value: (<SixImage />) },
-          { id: 3, value: (<TwoImage />) },
-          { id: 4, value: (<TenImage />) },
+          { id: 1, value: (<SgoodImage />) },
+          { id: 2, value: (<Rkoo3Image />) },
+          { id: 3, value: (<FatehaImage />) },
+          { id: 4, value: (<TakbeerImage />) },
         ],
-        correctAnswer: { id: 4, value: (<TenImage />) },
-      },*/
+        correctAnswer: { id: 4, value: (<TakbeerImage />) },
+      },
 
       ],
 };
